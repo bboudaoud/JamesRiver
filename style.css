@@ -452,10 +452,15 @@ a:active {
         white-space: normal;
     }
 
+    /* Flex items wrap as whole readings, so nowrap keeps each value with its unit */
+    .siteStats {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2px 8px;
+    }
+
     .siteData {
-        padding-right: 8px;
-        /* Break between value and unit, but only when it won't fit */
-        white-space: normal;
+        padding-right: 0;
     }
 
     .branch .siteStats {

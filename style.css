@@ -27,6 +27,8 @@ h1 {
 }
 
 .bar {
+    /* One source of truth for the river line, HTML border and SVG stroke alike */
+    --line-width: 4px;
     box-sizing: border-box;
     max-width: 900px;
     width: 100%;
@@ -63,7 +65,7 @@ a:active {
     left: 50%;
     transform: translateX(-50%);
     top: 0;
-    border-left: 4px solid var(--color, darkblue);
+    border-left: var(--line-width) solid var(--color, darkblue);
     content: "";
 }
 
@@ -119,7 +121,9 @@ a:active {
 
 .fork-lines .fork-line {
     stroke: var(--color, darkblue);
-    stroke-width: 4;
+    /* non-scaling-stroke keeps this in screen px, immune to the viewBox scale */
+    stroke-width: var(--line-width);
+    vector-effect: non-scaling-stroke;
     stroke-linecap: round;
     fill: none;
 }
@@ -402,10 +406,6 @@ a:active {
     .fork-lines {
         width: 120px;
         height: 48px;
-    }
-
-    .fork-lines .fork-line {
-        vector-effect: non-scaling-stroke;
     }
 
     /* Counter the 0.6 viewBox scale so the dots keep their full-size diameter */

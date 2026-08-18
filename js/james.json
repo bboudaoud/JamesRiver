@@ -1,0 +1,175 @@
+{
+  "title": "James Dashboard",
+  "heading": "James River",
+
+  "defaults": {
+    "state": "VA",
+    "refreshSeconds": 300,
+    "tempThresholds": {
+      "cold": 40,
+      "cool": 60,
+      "warm": 65,
+      "hot": 70,
+      "extreme": 75
+    }
+  },
+
+  "structure": [
+    {
+      "type": "fork",
+      "branches": [
+        {
+          "name": "Jackson",
+          "compute": {
+            "add": ["02013100", "02014000"]
+          },
+          "flowThresholds": [200, 800, 1000, 3000],
+          "showHeight": false,
+          "showTemp": false
+        },
+        {
+          "name": "Cowpasture",
+          "siteId": "02016000",
+          "flowThresholds": [100, 400, 800, 1500]
+        }
+      ]
+    },
+    {
+      "name": "Lick Run",
+      "siteId": "02016500",
+      "flowThresholds": [500, 1500, 2000, 3000]
+    },
+    {
+      "type": "inflow",
+      "tributary": {
+        "name": "Craig Creek",
+        "siteId": "02018000",
+        "flowThresholds": [50, 200, 500, 1000]
+      }
+    },
+    {
+      "type": "inflow",
+      "tributary": {
+        "name": "Catawba Creek",
+        "siteId": "02018500",
+        "flowThresholds": [20, 100, 300, 600]
+      }
+    },
+    {
+      "name": "Buchanan",
+      "siteId": "02019500",
+      "flowThresholds": [800, 2000, 4000, 8000]
+    },
+    {
+      "type": "inflow",
+      "tributary": {
+        "name": "Maury River",
+        "siteId": "02024000",
+        "flowThresholds": [100, 500, 1000, 2500]
+      }
+    },
+    {
+      "name": "Big Island",
+      "siteId": "02024752",
+      "flowThresholds": [1000, 2500, 5000, 10000]
+    },
+    {
+      "type": "inflow",
+      "tributary": {
+        "name": "Pedlar River",
+        "siteId": "02024915",
+        "flowThresholds": [20, 100, 300, 600]
+      }
+    },
+    {
+      "name": "Holcomb Rock",
+      "siteId": "02025500",
+      "flowThresholds": [1000, 2500, 5000, 10000]
+    },
+    {
+      "name": "Bent Creek",
+      "siteId": "02026000",
+      "flowThresholds": [1200, 3000, 6000, 12000]
+    },
+    {
+      "type": "inflow",
+      "tributary": {
+        "name": "Tye River",
+        "siteId": "02027000",
+        "flowThresholds": [50, 200, 500, 1000]
+      }
+    },
+    {
+      "type": "inflow",
+      "tributary": {
+        "name": "Rockfish River",
+        "siteId": "02028500",
+        "flowThresholds": [50, 200, 500, 1000]
+      }
+    },
+    {
+      "name": "Scottsville",
+      "siteId": "02029000",
+      "flowThresholds": [1500, 4000, 8000, 15000]
+    },
+    {
+      "type": "inflow",
+      "tributary": {
+        "name": "Hardware River",
+        "siteId": "02030000",
+        "flowThresholds": [20, 100, 300, 600]
+      }
+    },
+    {
+      "type": "inflow",
+      "tributary": {
+        "name": "Slate River",
+        "siteId": "02030500",
+        "flowThresholds": [20, 100, 300, 600]
+      }
+    },
+    {
+      "type": "inflow",
+      "tributary": {
+        "name": "Rivanna River",
+        "siteId": "02034000",
+        "flowThresholds": [100, 500, 1500, 3000]
+      }
+    },
+    {
+      "name": "Cartersville",
+      "siteId": "02035000",
+      "flowThresholds": [2000, 5000, 10000, 20000]
+    },
+    {
+      "type": "inflow",
+      "tributary": {
+        "name": "Fine Creek",
+        "siteId": "02036500",
+        "flowThresholds": [10, 50, 150, 300]
+      }
+    },
+    {
+      "type": "terminal",
+      "name": "Richmond",
+      "siteId": "02037500",
+      "flowThresholds": [2500, 6000, 12000, 25000]
+    },
+    {
+      "type": "inflow",
+      "tributary": {
+        "name": "Appomattox",
+        "siteId": "02041650",
+        "flowThresholds": [200, 800, 2000, 5000]
+      }
+    },
+    {
+      "type": "inflow",
+      "tributary": {
+        "name": "Chickahominy",
+        "siteId": "02042500",
+        "flowThresholds": [50, 200, 500, 1500]
+      }
+    }
+  ]
+}

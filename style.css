@@ -89,6 +89,9 @@ a:active {
 
 /* Fork - SVG Y junction */
 .fork-container {
+    /* Single knob for the Y's size; stroke and dots divide it back out so they
+       stay at their real pixel size instead of shrinking with the viewBox */
+    --fork-scale: 1;
     position: relative;
     width: 100%;
     max-width: 600px;
@@ -104,15 +107,15 @@ a:active {
 .fork {
     position: relative;
     width: 100%;
-    height: 80px;
+    height: calc(80px * var(--fork-scale));
 }
 
 .fork-lines {
     position: absolute;
     left: 50%;
     top: 0;
-    width: 200px;
-    height: 80px;
+    width: calc(200px * var(--fork-scale));
+    height: calc(80px * var(--fork-scale));
     transform: translateX(-50%);
     overflow: visible;
     z-index: 1;
@@ -121,9 +124,7 @@ a:active {
 
 .fork-lines .fork-line {
     stroke: var(--color, darkblue);
-    /* non-scaling-stroke keeps this in screen px, immune to the viewBox scale */
-    stroke-width: var(--line-width);
-    vector-effect: non-scaling-stroke;
+    stroke-width: calc(var(--line-width) / var(--fork-scale));
     stroke-linecap: round;
     fill: none;
 }
@@ -134,6 +135,7 @@ a:active {
 
 .fork-lines .fork-dot {
     fill: var(--color, darkblue);
+    r: calc(8px / var(--fork-scale));
 }
 
 .branch {
@@ -394,23 +396,10 @@ a:active {
         margin-bottom: 20px;
     }
 
+    /* Shrink the Y itself; stroke and dots hold their size automatically */
     .fork-container {
         max-width: 100%;
-    }
-
-    /* Scale the Y proportionally while keeping its stroke equal to the river line */
-    .fork {
-        height: 48px;
-    }
-
-    .fork-lines {
-        width: 120px;
-        height: 48px;
-    }
-
-    /* Counter the 0.6 viewBox scale so the dots keep their full-size diameter */
-    .fork-lines .fork-dot {
-        r: 13.3;
+        --fork-scale: 0.6;
     }
 
     .branch {

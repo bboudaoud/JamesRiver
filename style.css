@@ -436,7 +436,16 @@ a:active {
     }
 
     .siteLabel {
-        font-size: 1.4em;
+        font-size: 1.2em;
+    }
+
+    /* Column is narrower than the arrow so the text sits just past the tip */
+    .tributary {
+        grid-template-columns: 14px 18px minmax(0, 1fr);
+    }
+
+    .inflow-junction:before {
+        width: 24px;
     }
 
     .tributary .siteLabel {
@@ -445,6 +454,8 @@ a:active {
 
     .siteData {
         padding-right: 8px;
+        /* Break between value and unit, but only when it won't fit */
+        white-space: normal;
     }
 
     .branch .siteStats {

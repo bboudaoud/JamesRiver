@@ -408,6 +408,11 @@ a:active {
         vector-effect: non-scaling-stroke;
     }
 
+    /* Counter the 0.6 viewBox scale so the dots keep their full-size diameter */
+    .fork-lines .fork-dot {
+        r: 13.3;
+    }
+
     .branch {
         top: 10px;
         width: calc(50% - 48px);
@@ -432,6 +437,10 @@ a:active {
 
     .siteLabel {
         font-size: 1.4em;
+    }
+
+    .tributary .siteLabel {
+        white-space: normal;
     }
 
     .siteData {
